@@ -1,14 +1,12 @@
 <?php
-    // local
-    $mysqli = new mysqli("localhost","root","","123");
-   
-    //heroku
-   //$mysqli = new mysqli("","","","");
 
-    // Check connection
-    if ($mysqli->connect_errno) {
-    echo "Failed to connect to MySQL: " . $mysqli->connect_error;
-    exit();
+// Trong admin/config/config.php
+$mysqli = new mysqli("localhost", "root", "", "123");
+
+// Kiểm tra kết nối
+if ($mysqli->connect_error) {
+    die("Lỗi kết nối MySQL: " . $mysqli->connect_error);
 }
-// Set charset to UTF-8
+
+// Thiết lập mã hóa UTF-8
 $mysqli->set_charset("utf8");

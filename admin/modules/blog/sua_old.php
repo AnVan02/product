@@ -34,21 +34,6 @@ $query_comment = mysqli_query($mysqli, $sql_comment);
                         </div>
                         
                         <div class="input-item form-group">
-                            <label for="article_link" class="d-block">Link bài viết</label>
-                            <input type="text" name="article_link" class="form-control" value="">
-                        </div>
-                        
-                         <div class="input-item form-group">
-                            <label for="article_tag" class="d-block">Tab bài viết</label>
-                            <input type="text" name="article_tag" class="d-block form-control" value="">
-                        </div>
-
-                        <div class="input-item form-group">
-                            <label for="title" class="d-block">Tiêu đề bài viết</label>
-                            <input type="text" name="article_title" class="d-block form-control" value="<?php echo $row['article_title'] ?>" placeholder="">
-                        </div>
-                        
-                        <div class="input-item form-group">
                             <label for="title" class="d-block">Tóm tắt bài viết</label>
                             <textarea name="article_content"><?php echo $row['article_content'] ?></textarea>
                         </div>
@@ -103,13 +88,14 @@ $query_comment = mysqli_query($mysqli, $sql_comment);
         <a href="#" class="button__control btn__wanning" id="btnDelete">Xóa</a>
     </div>
 </div>
-<!-- <script>
+
+<script>
     CKEDITOR.replace('article_content');
     CKEDITOR.replace('article_summary');
     
-    
     var btnAccept = document.getElementById("btnAccept");
     var btnDelete = document.getElementById("btnDelete");
+
     var checkAll = document.getElementById("checkAll");
     var checkboxes = document.getElementsByClassName("checkbox");
     var dialogControl = document.querySelector('.dialog__control');
@@ -149,118 +135,14 @@ $query_comment = mysqli_query($mysqli, $sql_comment);
         }
     }
 
-    function getCheckedCheckboxes() {
-        var checkeds = document.querySelectorAll('.checkbox:checked');
-        var checkedComment = [];
-        for (var i = 0; i < checkeds.length; i++) {
-    btnAccept.href = "modules/blog/xuly.php?&article_id=<?php echo $_GET['article_id'] ?>&acceptcomment=1&data="+ JSON.stringify(checkedComment);
-        btnDelete.href = "modules/blog/xuly.php?&article_id=<?php echo $_GET['article_id'] ?>&deletecomment=1&data="+ JSON.stringify(checkedComment);
-    }
-</script> -->
-
-<script>
-    $(document).ready (function (){
-        $('#article_content').summernote({
-            height:600,
-            minHeight: null,
-            maxHeight: mull,
-            focus: false ,
-            toolbar: [
-                    ['style', ['bold', 'italic', 'underline', 'clear']],
-                    ['font', ['strikethrough', 'superscript', 'subscript']],
-                    ['fontsize', ['fontsize']],
-                    ['color', ['color']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['height', ['height']],
-                    ['insert', ['link', 'picture', 'video']],
-                    ['view', ['fullscreen', 'codeview']]
-                ];
-                callbacks :{
-
-                }
-            });
-        });
-    $(documet).ready(function (){
-        $('#article_summary').summernote({
-            height:300,
-            minHeight:null,
-            maxHeight:null,
-            focus: false ,
-            toolbar :[
-                ['style',['bold', 'italic', 'underline', 'clean']],
-                ['font', ['strikethrough','superscript','subscript']],
-                ['fontsize ',['color']],
-                ['para', ['ul','ol','paragraph']],
-                ['height',['height']],
-                ['insert'.['link', 'picture','video']],
-                ['view', ['fullsreen', 'codeview']]
-            ]
-        });
-    });
-        var btnAccept = document.getElementById("btnAccept");
-        var btnDelete = document.getElementById("btnDelete");
-        var checkAll = document.getElementById("checkAll");
-        var checkboxes = document.getElementsByClassName("checkbox");
-        var dialogControl = document.querySelector('.dialog__control');
-  
-        if (checkAll) {
-            checkAll.addEventListener("click", function() {
-                if (checkAll.checked) {
-                    for (var i = 0; i < checkboxes.length; i++) {
-                        checkboxes[i].checked = true;
-                    }
-                } else {
-                    for (var i = 0; i < checkboxes.length; i++) {
-                        checkboxes[i].checked = false;
-                    }
-                }
-                testChecked();
-                getCheckedCheckboxes();
-            });
-        }
-        
-        function testChecked() {
-            var count = 0;
-            for (let i = 0; i < checkboxes.length; i++) {
-                if (checkboxes[i].checked) {
-                    count++;
-                }
-            }
-            if (count > 0) {
-                dialogControl?.classList.add('active');
-            } else {
-                dialogControl?.classList.remove('active');
-                if (checkAll) checkAll.checked = false;
-            }
-        }
-
-        function testChecked (){
-            var conunt = 0;
-            for (let i = 0; i< checkboxes.length; i++) {
-                if(checkboxes[i].checked) {
-                    count ++;
-                }
-            }
-            if (count > 0){
-                dialogControl?.classList.add ('active');
-            } else {
-                dialogControl?.classList.remove('active');
-                if(checkAll) checkAll.checked = false;
-            }
-        }
-
         function getCheckedCheckboxes() {
             var checkeds = document.querySelectorAll('.checkbox:checked');
             var checkedComment = [];
             for (var i = 0; i < checkeds.length; i++) {
-                checkedComment.push(checkeds[i].id);
-            }
-            if (btnAccept) {
-                btnAccept.href = "modules/blog/xuly.php?&article_link=<?php echo $_GET['article_link'] ?>&acceptcomment=1&data="+ JSON.stringify(checkedComment);
-            }
-            if (btnDelete) {
-                btnDelete.href = "modules/blog/xuly.php?&article_link=<?php echo $_GET['article_link'] ?>&deletecomment=1&data="+ JSON.stringify(checkedComment);
-            }
+        btnAccept.href = "modules/blog/xuly.php?&article_id=<?php echo $_GET['article_id'] ?>&acceptcomment=1&data="+ JSON.stringify(checkedComment);
+            btnDelete.href = "modules/blog/xuly.php?&article_id=<?php echo $_GET['article_id'] ?>&deletecomment=1&data="+ JSON.stringify(checkedComment);
         }
-        
-    </script>
+    }
+</script>
+
+

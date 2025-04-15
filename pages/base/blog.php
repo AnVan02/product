@@ -1,5 +1,4 @@
 
-
 <?php
 // Bật hiển thị lỗi
 ini_set('display_errors', 1);
@@ -36,7 +35,6 @@ $totalPages = ceil($totalItems / $limit);
 ?>
 
 <title>Tin Tức</title>
-
 <!-- start blog -->
 <div class="featured-news">
     <h4>TIN TỨC NỔI BẬT</h4>
@@ -121,7 +119,7 @@ body, h2, p, ul, li, a, img  {
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    font-size: 17px;
+    font-size: 18px;
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
@@ -146,7 +144,7 @@ a:hover {
 }
 
 .featured-news h4 {
-    font-size: 2.0rem;
+    font-size: 15px;
     text-align: center;
     margin-bottom: 30px;
     color: #333;
@@ -193,13 +191,14 @@ a:hover {
     display: block;
     color: #666;
     margin-bottom: 10px;
-    font-size: 0.9rem;
+    font-size: 16px;
 }
 
 .featured-news .news-content p {
-    font-size: 1rem;
+    font-size: 16px;
     color: #555;
     line-height: 1.6;
+    
 }
 
 /* News List Section */
@@ -239,7 +238,7 @@ a:hover {
 }
 
 .news-content h2 {
-    font-size: 1.4rem;
+    font-size: 16px ;
     margin-bottom: 10px;
 }
 
@@ -247,11 +246,11 @@ a:hover {
     display: block;
     color: #0a0a0a;
     margin-bottom: 10px;
-    font-size: 0.9rem;
+    font-size: 15px;
 }
 
 .news-content p {
-    font-size: 0.95rem;
+    font-size: 16px;
     color: #0a0a0a;
     line-height: 1.5;
     display: -webkit-box;

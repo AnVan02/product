@@ -38,8 +38,8 @@ $article = mysqli_fetch_assoc($query_article);
     <div class="main-layout">
         <!-- Cột bên trái: Tin tức nổi bật -->
         <div class="sidebar">
-            <h3 style="font-weight: bold; color: #FF0000;">Tin tức nổi bật</h3>
-            <p>Bạn có thể khám phá thêm nhiều thông tin mới nhất về công nghệ và giải pháp từ tin tức ROSA</p>
+            <h3 style="font-weight: bold;color: #FF0000; font-size: 18px;">Tin tức nổi bật</h3>
+            <p>Bạn có thể khám phá thêm nhiều thông tin mới nhất về công nghệ và giải pháp từ tin tức Viết Sơn </p>
             <?php
             // Truy vấn hiển thị bài viết nổi bật 
             $newsQuery = "SELECT article_id, article_title, article_image, article_date FROM article ORDER BY article_date DESC LIMIT 3";
@@ -88,12 +88,9 @@ $article = mysqli_fetch_assoc($query_article);
                     <hr style="width=20px">
                 </div>
                 <div class="article__context"><?= htmlspecialchars_decode($article['article_content']); ?></div> 
-                <a href="index.php?page=article&article_id<?= htmlspecialchars($new['article_id']);?>">
-                    <img src="../admin/modules/blog/uploads/<?= htmlspecialchars ($new['article_image'])?>" alt="New Image">
-                </a>
                 <div class="article__summary"><?= htmlspecialchars_decode($article['article_summary']); ?></div>
 
-                <div class="article__tag">
+                <!-- <div class="article__tag">
                     <strong>Thẻ: </strong>
                     <?php
                     if (!empty($article['article_tag'])) {
@@ -106,7 +103,7 @@ $article = mysqli_fetch_assoc($query_article);
                         }
                     }
                     ?>
-                </div>
+                </div> -->
             </div>
         </section>
     </div>
@@ -190,7 +187,7 @@ h1 {
 }
 
 .sidebar p {
-    font-size: 0.9rem;
+    font-size: 15px;
     color: #777;
     margin-bottom: 20px;
 }
@@ -220,7 +217,7 @@ h1 {
 }
 
 .news-title a {
-    font-size: 1rem;
+    font-size: 15px;
     color: #222;
     font-weight: bold;
     text-decoration: none;
@@ -232,7 +229,7 @@ h1 {
 }
 
 .news-date {
-    font-size: 0.85rem;
+    font-size: 15px;
     color: #777;
     margin-top: 5px;
 }
@@ -246,24 +243,25 @@ h1 {
     width: 100%;
     padding: 44px 5%;
     background: #fff;
+    margin: -54px 0;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .article__content h1 {
-    font-size: 2rem;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
     color: #222;
 }
 
 .article__content span {
-    font-size: 0.9rem;
+    font-size: 15px;
     color: #777;
 }
 
 .article__context {
-    font-size: 1rem;
+    font-size: 15px;
     line-height: 1.8;
     color: #444;
     margin-bottom: 20px;
@@ -275,7 +273,7 @@ h1 {
 }
 
 .article__tag strong {
-    font-size: 17px;
+    font-size: 15px;
     color: #333;
     margin-right: 5px;
 }
